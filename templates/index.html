@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpamGuard | AI Email Security</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080d1b;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+
+.history-section {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #151d30;
+    border: 1px solid #263653;
+    border-radius: 15px;
+    color: white;
+    text-align: left;
+}
+
+.history-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.history-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.history-card h3 {
+    margin-top: 0;
+    color: #60a5fa;
+}
+
+.history-card p {
+    color: #cbd5e1;
+    margin: 8px 0;
+}
+
+.history-card summary {
+    color: #93c5fd;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.history-card details p {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+        header {
+            padding: 24px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #202941;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+
+        .status {
+            color: #4ade80;
+            font-size: 13px;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 70px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #172554;
+            color: #93c5fd;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 18px;
+        }
+
+        h1 span {
+            color: #60a5fa;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .panel {
+            background: #111a2e;
+            border: 1px solid #263550;
+            padding: 28px;
+            border-radius: 16px;
+            text-align: left;
+        }
+
+        .panel h2 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .hint {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 190px;
+            background: #080f20;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 16px;
+            color: white;
+            font-size: 14px;
+            resize: vertical;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #60a5fa;
+        }
+
+        textarea::placeholder {
+            color: #64748b;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 15px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            border: none;
+            border-radius: 9px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .spam {
+            background: #3b1721;
+            border: 1px solid #ef4444;
+            color: #fca5a5;
+        }
+
+        .normal {
+            background: #123126;
+            border: 1px solid #22c55e;
+            color: #86efac;
+        }
+
+        .result h2 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            main {
+                margin: 35px auto;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            .panel {
+                padding: 18px;
+            }
+        }
+
+.clear-button {
+    background: #dc2626;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+    margin: 0 auto 20px;
+    transition: 0.3s;
+}
+
+.clear-button:hover {
+    background: #b91c1c;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🛡 SpamGuard</div>
+        <div class="status">● AI System Active</div>
+    </header>
+
+    <main>
+
+        <div class="tag">AI-POWERED EMAIL SECURITY</div>
+
+        <h1>Protect Your Inbox with <span>AI</span></h1>
+
+        <p class="subtitle">
+            Analyse suspicious emails instantly using machine learning.
+            Detect spam and keep your inbox safer.
+        </p>
+
+        <div class="panel">
+
+            <h2>Email Analysis</h2>
+
+            <p class="hint">
+                Paste the complete email content below.
+            </p>
+
+            <form method="POST">
+
+                <textarea
+                    name="email"
+                    placeholder="Paste your email content here..."
+                    required>{{ email_text }}</textarea>
+
+                <button type="submit">
+                    Analyse Email →
+                </button>
+
+            </form>
+
+            
+{% if result == "SPAM" %}
+    <div class="result spam">
+        <h2>⚠ SPAM DETECTED</h2>
+        <p>This email has been classified as suspicious.</p>
+
+        <h3 style="margin-top: 15px;">
+            {{ confidence }}% confidence
+        </h3>
+    </div>
+
+{% elif result == "NORMAL" %}
+    <div class="result normal">
+        <h2>✓ EMAIL APPEARS SAFE</h2>
+        <p>This email has been classified as normal.</p>
+
+        <h3 style="margin-top: 15px;">
+            {{ confidence }}% confidence
+        </h3>
+    </div>
+{% endif %}
+
+
+        </div>
+
+    </main>
+
+    <footer>
+        SpamGuard © 2026 | AI-Based Email Spam Detection
+    </footer>
+
+
+<section class="history-section">
+
+    <h2>📋 Email Prediction History</h2>
+
+<form method="POST" action="/clear-history"
+      onsubmit="return confirm('Are you sure you want to clear all history?');">
+
+    <button type="submit" class="clear-button">
+        Clear History
+    </button>
+
+</form>
+
+    {% if history %}
+
+        <div class="history-container">
+
+            {% for item in history %}
+
+                <div class="history-card">
+
+                    <h3>
+                        {% if item[2] == "SPAM" %}
+                            ⚠ SPAM DETECTED
+                        {% else %}
+                            ✓ EMAIL APPEARS SAFE
+                        {% endif %}
+                    </h3>
+
+                    <p>
+                        <strong>Confidence:</strong>
+                        {{ item[3] }}%
+                    </p>
+
+                    <p>
+                        <strong>Date:</strong>
+                        {{ item[4] }}
+                    </p>
+
+                    <details>
+                        <summary>View email</summary>
+                        <p>{{ item[1] }}</p>
+                    </details>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <p>No prediction history yet. Check an email to get started!</p>
+
+    {% endif %}
+
+</section>
+
+</body>
+</html>
